@@ -24,7 +24,7 @@ paths:
             maximum: 100
             format: int32
       responses:
-        '200':
+        "200":
           description: A paged array of pets
           headers:
             x-next:
@@ -32,7 +32,7 @@ paths:
               schema:
                 type: string
           content:
-            application/json:    
+            application/json:
               schema:
                 $ref: "#/components/schemas/Pets"
         default:
@@ -47,7 +47,7 @@ paths:
       tags:
         - pets
       responses:
-        '201':
+        "201":
           description: Null response
         default:
           description: unexpected error
@@ -69,7 +69,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
