@@ -23,5 +23,5 @@ jobs:
       - run: apt install -y temurin-17-jdk
       - run: npm ci
       - run: npx patch-package
-      - run: npx oasg generate oasg-github-example
-      - run: npx oasg publish oasg-github-example
+      - run: npx oasg generate oasg-github-demo
+      - run: npx oasg publish oasg-github-demo

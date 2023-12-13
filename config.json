@@ -8,13 +8,13 @@
     ],
     "targets": [
         {
-            "id": "oasg-github-example",
+            "id": "oasg-github-demo",
             "source": "source-simple",
             "type": "spring",
             "artifactId": "project-api",
             "groupId": "com.project.api",
             "basePackage": "com.project.api",
-            "mavenRepoUrl": "https://maven.pkg.github.com/zaenk/oasg-github-example",
+            "mavenRepoUrl": "https://maven.pkg.github.com/zaenk/oasg-github-demo",
             "generatorCustomArgs": "--model-name-suffix=Dto"
         }
     ]
