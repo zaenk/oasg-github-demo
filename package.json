@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@team-supercharge/oasg": "13.0.1"
+    "@team-supercharge/oasg": "13.0.1",
+    "patch-package": "^8.0.0"
   }
 }
