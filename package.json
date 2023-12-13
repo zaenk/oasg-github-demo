@@ -1,0 +1,15 @@
+{
+  "name": "oasg-github",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/openapi.yaml",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@team-supercharge/oasg": "^13.0.1"
+  }
+}
