@@ -1,0 +1,21 @@
+diff --git a/node_modules/@team-supercharge/oasg/targets/spring/settings.xml b/node_modules/@team-supercharge/oasg/targets/spring/settings.xml
+index 24ef932..b0eb3cc 100644
+--- a/node_modules/@team-supercharge/oasg/targets/spring/settings.xml
++++ b/node_modules/@team-supercharge/oasg/targets/spring/settings.xml
+@@ -2,14 +2,8 @@
+   <servers>
+     <server>
+       <id>target</id>
+-      <configuration>
+-        <httpHeaders>
+-          <property>
+-            <name>Job-Token</name>
+-            <value>${env.CI_JOB_TOKEN}</value>
+-          </property>
+-        </httpHeaders>
+-      </configuration>
++      <username>${env.MAVEN_REPO_USERNAME}</username>
++      <password>${env.MAVEN_REPO_PASSWORD}</password>
+     </server>
+   </servers>
+ </settings>
