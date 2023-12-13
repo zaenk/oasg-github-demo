@@ -5,12 +5,14 @@ on:
       - v*.*.*
 jobs:
   build-and-publish:
-    runs-on: "registry.gitlab.com/team-supercharge/oasg:13.0.1"
+    runs-on: ubuntu-latest
+    container:
+      image: "registry.gitlab.com/team-supercharge/oasg:13.0.1"
+      env:
+        MAVEN_REPO_USERNAME: ${{ toJson(github.actor) }}
+        MAVEN_REPO_PASSWORD: ${{ toJson(github.token) }}
     steps:
       - uses: actions/checkout@v4
       - run: npm ci
       - run: npx patch-package
       - run: npx oasg publish oasg-github-example
-        env:
-          MAVEN_REPO_USERNAME: ${{ toJson(github.actor) }}
-          MAVEN_REPO_PASSWORD: ${{ toJson(github.token) }}
