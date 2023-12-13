@@ -1,0 +1,16 @@
+name: build-and-publish
+on:
+  push:
+    tags:
+      - v*.*.*
+jobs:
+  build-and-publish:
+    runs-on: "registry.gitlab.com/team-supercharge/oasg:13.0.1"
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npx patch-package
+      - run: npx oasg publish oasg-github-example
+        env:
+          MAVEN_REPO_USERNAME: ${{ toJson(github.actor) }}
+          MAVEN_REPO_PASSWORD: ${{ toJson(github.token) }}

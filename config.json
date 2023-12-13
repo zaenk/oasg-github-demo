@@ -14,7 +14,7 @@
             "artifactId": "project-api",
             "groupId": "com.project.api",
             "basePackage": "com.project.api",
-            "mavenRepoUrl": "https://your-private-repo-url.com",
+            "mavenRepoUrl": "https://maven.pkg.github.com/zaenk/oasg-github-example",
             "generatorCustomArgs": "--model-name-suffix=Dto"
         }
     ]
