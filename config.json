@@ -1,0 +1,21 @@
+{
+    "sources": [
+        {
+            "id": "source-simple",
+            "type": "simple",
+            "input": "api/openapi.yaml"
+        }
+    ],
+    "targets": [
+        {
+            "id": "oasg-github-example",
+            "source": "source-simple",
+            "type": "spring",
+            "artifactId": "project-api",
+            "groupId": "com.project.api",
+            "basePackage": "com.project.api",
+            "mavenRepoUrl": "https://your-private-repo-url.com",
+            "generatorCustomArgs": "--model-name-suffix=Dto"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-  "name": "oasg-github",
+  "name": "oasg-github-demo",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -9,7 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@team-supercharge/oasg": "^13.0.1"
+  "dependencies": {
+    "@team-supercharge/oasg": "13.0.1"
   }
 }

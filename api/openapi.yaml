@@ -7,6 +7,8 @@ info:
     name: MIT
 servers:
   - url: http://petstore.swagger.io/v1
+tags:
+  - name: pets
 paths:
   /pets:
     get:
