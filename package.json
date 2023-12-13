@@ -1,7 +1,7 @@
 {
   "name": "oasg-github-demo",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "api/openapi.yaml",
   "scripts": {
