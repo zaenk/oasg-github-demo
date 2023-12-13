@@ -7,12 +7,20 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     container:
-      image: "registry.gitlab.com/team-supercharge/oasg:13.0.1"
+      # image: "registry.gitlab.com/team-supercharge/oasg:13.0.1"
+      image: node:18
       env:
         MAVEN_REPO_USERNAME: ${{ toJson(github.actor) }}
         MAVEN_REPO_PASSWORD: ${{ toJson(github.token) }}
     steps:
       - uses: actions/checkout@v4
+      - run: apt update
+      - run: apt install -y wget jq apt-transport-https
+      - run: mkdir -p /etc/apt/keyrings
+      - run: wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
+      - run: echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
+      - run: apt update
+      - run: apt install temurin-17-jdk
       - run: npm ci
       - run: npx patch-package
       - run: npx oasg publish oasg-github-example
