@@ -10,8 +10,8 @@ jobs:
       # image: "registry.gitlab.com/team-supercharge/oasg:13.0.1"
       image: node:18.15.0
       env:
-        MAVEN_REPO_USERNAME: ${{ toJson(github.actor) }}
-        MAVEN_REPO_PASSWORD: ${{ toJson(github.token) }}
+        MAVEN_REPO_USERNAME: ${{ github.actor }}
+        MAVEN_REPO_PASSWORD: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - run: apt update
